@@ -80,6 +80,17 @@ public class ServletOperaciones extends HttpServlet {
             
             double resultado=suma(numero1,numero2);
             valor=""+resultado;
+        }else if(operaciones.equalsIgnoreCase("RESTA")){
+            
+            double resultado=resta(numero1, numero2);
+            valor=""+resultado;
+        }else if(operaciones.equalsIgnoreCase("PRODUCTO")){
+             double resultado=producto(numero1, numero2);
+             valor=""+resultado;
+            
+        }else if(operaciones.equalsIgnoreCase("DIVISION")){
+           valor=division(numero1, numero2);
+           
         }
         
          HttpSession ses= request.getSession(true);      
@@ -89,18 +100,7 @@ public class ServletOperaciones extends HttpServlet {
        String pag = "/solucion.jsp";
         RequestDispatcher rd = request.getRequestDispatcher(pag);
         rd.forward(request, response);
-        
-      
-    
-        
-        
-        
-        
-        
-        
-        
-        
-        
+          
     }
         /**
      * Returns a short description of the servlet.
@@ -120,6 +120,26 @@ public class ServletOperaciones extends HttpServlet {
         return port.suma(numero1, numero2);
         
     }
+    
+    private double resta(double numero1, double numero2){
+        
+        Servlet.WSOperaciones port= service.getWSOperacionesPort();
+        return port.resta(numero1, numero2);
+    }
+    
+    private double producto(double numero1, double numero2){
+        
+        Servlet.WSOperaciones port=service.getWSOperacionesPort();
+        return port.producto(numero1, numero2);
+    }
+    
+    private String division( double numero1, double numero2){
+        String resultado="";
+        Servlet.WSOperaciones port=service.getWSOperacionesPort();
+        resultado=""+port.division(numero1, numero2);
+        return resultado;
+    }
+            
 
     }
     
