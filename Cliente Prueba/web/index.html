@@ -11,6 +11,48 @@ and open the template in the editor.
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
     </head>
     <body>
-        <div>TODO write content</div>
+         <form action="ServletOperaciones" method="POST">
+       
+            <table border="0">
+                <thead>
+                    <tr>
+                        <th></th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Numero 1</td>
+                        <td><input type="number" step="any" name="numero1" id="numero1" ></td>
+                    </tr>
+                    <tr>
+                        <td>Numero 2</td>
+                        <td><input type="number" step="any" name="numero2" id="numero2" ></td>
+                    </tr>
+                    <tr>
+                        <td>Seleccione la Operacion</td>
+                        <td><select name="operaciones">
+                                <option>SUMA</option>
+                                <option>RESTA</option>
+                                <option>PRODUCTO</option>
+                                <option>DIVISION</option>
+                            </select></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>Realizar Operación</td>
+                        <td><input type="submit" value="Enviar Solicitud" /></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                </tbody>
+            </table>
+
+        </form>  
+        
+        
+        
     </body>
 </html>
